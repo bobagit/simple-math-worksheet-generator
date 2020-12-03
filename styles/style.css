@@ -1,5 +1,7 @@
 body {
   font-family: Helvetica;
+  padding: 0;
+  margin: 0;
 }
 
 header {
@@ -15,12 +17,7 @@ header h1 {
   display: block;
 }
 
-section {
-  margin: 0 0 2rem;
-  padding: 0;
-}
-
-section form {
+form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,25 +31,24 @@ section form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 90%;
-  margin: 0rem auto;
+  width: 45%;
+  min-width: 520px;
+  margin: 2rem auto 5rem;
   padding: 1rem;
   font-size: 1.2rem;
   border: 2px solid #e1e1e1;
   background-color: lightyellow;
 }
 
-section form select {
+form select {
   font-size: 1.3rem;
 }
 
-section form .options {
-  width: 45%;
+form .options {
   margin: 0.4rem auto;
 }
 
-section form .disclaimer {
-  width: 80%;
+form .disclaimer {
   margin-top: 1rem;
   font-size: 0.9rem;
 }
@@ -64,8 +60,9 @@ section form .disclaimer {
       grid-template-columns: auto auto auto;
   grid-column-gap: 4rem;
   grid-row-gap: 10rem;
-  margin: 0;
+  margin: 0 auto;
   font-size: 3rem;
+  max-width: 900px;
 }
 
 #card-container .card {
@@ -113,14 +110,49 @@ section form .disclaimer {
   border-top: 4px solid black;
 }
 
+@media (max-width: 600px) {
+  header h1 {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+  }
+  form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 70%;
+    min-width: 300px;
+    margin: 1rem auto;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+  form select {
+    font-size: 1.3rem;
+  }
+  form .options {
+    margin: 1rem auto;
+  }
+  form .disclaimer {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
 @media print {
-  html, body {
-    height: 100%;
-  }
   header {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
   }
-  section form {
+  form {
     display: none;
   }
   footer {
