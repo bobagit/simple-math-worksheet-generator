@@ -7,7 +7,7 @@ digitsTop.value = localStorage.getItem('digitsTop') || 1
 let digitsBottom = document.querySelector('.digits-bottom')
 digitsBottom.value = localStorage.getItem('digitsBottom') || 1
 let operatorType = document.querySelector('.operator-type')
-operatorType.value = localStorage.getItem('operator') || '+'
+operatorType.value = localStorage.getItem('operator') || '&#x2b'
 
 // create random number generator
 let randomGen = (digits) => {
