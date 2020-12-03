@@ -33,7 +33,7 @@ function generateNumber(digits) {
 // TODO make ability to generate specifed range of numbers
 // TODO create grade levels, which increases complexity
 
-function buildCard(numCards=9, whichOperator=operatorType.value, topVal=digitsTop.value, bottomVal=digitsBottom.value) {
+function buildCard(numCards=12, whichOperator=operatorType.value, topVal=digitsTop.value, bottomVal=digitsBottom.value) {
   for (let index = 0; index < numCards; index++) {
     // a card
     let card = document.createElement('div')
