@@ -146,18 +146,122 @@ form .disclaimer {
     font-size: 0.9rem;
     text-align: center;
   }
+  #card-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+    grid-column-gap: 2rem;
+    grid-row-gap: 4rem;
+    margin: 0 auto;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  #card-container .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #card-container .card .top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #card-container .card .operator {
+    margin-top: auto;
+  }
+  #card-container .card ul {
+    list-style: none;
+  }
+  #card-container .card ul.numbers {
+    margin: 0;
+  }
+  #card-container .card ul li {
+    text-align: right;
+    font-family: "Menlo", "Monaco", "Courier";
+    letter-spacing: 0.9rem;
+  }
+  #card-container .card .answer {
+    border-top: 3px solid black;
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+  }
 }
 
 @media print {
   header {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
-  form {
+  #card-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+    grid-column-gap: 5rem;
+    grid-row-gap: 10rem;
+    margin: 0 auto;
+    font-size: 3rem;
+    max-width: 900px;
+  }
+  #card-container .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #card-container .card .top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #card-container .card .operator {
+    margin-top: auto;
+  }
+  #card-container .card ul {
+    list-style: none;
+  }
+  #card-container .card ul.numbers {
+    margin: 0;
+  }
+  #card-container .card ul li {
+    text-align: right;
+    font-family: "Menlo", "Monaco", "Courier";
+    letter-spacing: 0.9rem;
+  }
+  #card-container .card .answer {
+    border-top: 4px solid black;
+  }
+  #customize {
     display: none;
   }
   footer {
     position: absolute;
     bottom: 0;
+    right: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */

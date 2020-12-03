@@ -84,12 +84,73 @@ form
       margin-top: 1rem
       font-size: 0.9rem
       text-align: center
-
-@media print
-  header
-    margin-bottom: 2rem
-  form
-    display: none
+  #card-container
+    display: grid
+    grid-template-columns: auto auto auto
+    grid-column-gap: 2rem
+    grid-row-gap: 4rem
+    margin: 0 auto
+    font-size: 2rem
+    padding: 1rem
+    .card
+      display: flex
+      flex-direction: column
+      .top
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+      
+      .operator
+        margin-top: auto
+      ul
+        list-style: none
+        &.numbers
+          margin: 0
+        li
+          text-align: right
+          font-family: "Menlo", "Monaco", "Courier"
+          letter-spacing: 0.9rem
+      .answer
+        border-top: 3px solid black
   footer
     position: absolute
     bottom: 0
+    right: 20px
+
+@media print
+  header
+    margin-bottom: 4rem
+  #card-container
+    display: grid
+    grid-template-columns: auto auto auto
+    grid-column-gap: 5rem
+    grid-row-gap: 10rem
+    margin: 0 auto
+    font-size: 3rem
+    max-width: 900px
+    .card
+      display: flex
+      flex-direction: column
+      .top
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+      
+      .operator
+        margin-top: auto
+      ul
+        list-style: none
+        &.numbers
+          margin: 0
+        li
+          text-align: right
+          font-family: "Menlo", "Monaco", "Courier"
+          letter-spacing: 0.9rem
+      .answer
+        border-top: 4px solid black
+  #customize
+      display: none
+  footer
+    position: absolute
+    bottom: 0
+    right: 20px
