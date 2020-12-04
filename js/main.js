@@ -23,7 +23,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let isTwoDigits = (num) => num.toString().length > 1 ? true : false;
+let isTwoDigits = (num) => num > 1 ? true : false;
 
 let createNumber = (digits) => {
   let number = '';
@@ -32,7 +32,7 @@ let createNumber = (digits) => {
     if (i == 0 && isTwoDigits(digits)) {
       num = getRandomInt(1, rangeTopMax.value)
     } else {
-      num = getRandomInt(rangeTopMin.value, rangeTopMax.value)
+      num = getRandomInt(0, rangeTopMax.value)
     }
     number += num
   }
