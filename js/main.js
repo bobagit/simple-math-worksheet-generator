@@ -1,39 +1,53 @@
 const cardContainer = document.getElementById('card-container')
 const operator = document.createElement('div')
 const answer = document.createElement('div')
-let form = document.getElementById('customize')
-let digitsTop = document.querySelector('.digits-top')
-digitsTop.value = localStorage.getItem('digitsTop') || 1
-let digitsBottom = document.querySelector('.digits-bottom')
-digitsBottom.value = localStorage.getItem('digitsBottom') || 1
-let operatorType = document.querySelector('.operator-type')
-operatorType.value = localStorage.getItem('operator') || '&#x2b'
+const form = document.getElementById('customize')
+const digitsTop = document.querySelector('.digits-top')
+const digitsBottom = document.querySelector('.digits-bottom')
+const operatorType = document.querySelector('.operator-type')
+const rangeTopMin = document.querySelector('.range-top-min')
+const rangeTopMax = document.querySelector('.range-top-max')
 
-// create random number generator
-let randomGen = (digits) => {
+// local storage values
+digitsTop.value = localStorage.getItem('digitsTop') || 1
+digitsBottom.value = localStorage.getItem('digitsBottom') || 1
+operatorType.value = localStorage.getItem('operator') || '&#x2b'
+rangeTopMin.value = localStorage.getItem('rangeTopMin') || 1
+rangeTopMax.value = localStorage.getItem('rangeTopMax') || 9
+
+// random number generator
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+let isTwoDigits = (num) => num.toString().length > 1 ? true : false;
+
+let createNumber = (digits) => {
   let number = '';
   let num = 0;
   for (let i = 0; i < digits; i++) {
-    if (i == 0 && (digits > 1)) { // first number not zero if > 9
-      num = Math.floor(Math.random() * 9 + 1)
+    if (i == 0 && isTwoDigits(digits)) {
+      num = getRandomInt(1, rangeTopMax.value)
     } else {
-      num = Math.floor(Math.random() * 10)
+      num = getRandomInt(rangeTopMin.value, rangeTopMax.value)
     }
     number += num
   }
   return number
 } 
 
-// create ability to add multiple lists
 function generateNumber(digits) {
  let randNum = document.createElement('li')
- randNum.innerText = randomGen(digits);
+ randNum.innerText = createNumber(digits);
  return randNum
 }
+
 // TODO make ability to generate specifed range of numbers
 // TODO create grade levels, which increases complexity
 
-function buildCard(numCards=12, whichOperator=operatorType.value, topVal=digitsTop.value, bottomVal=digitsBottom.value) {
+function buildCard(numCards=12, whichOperator=operatorType.value, numberOfDigitsTop=digitsTop.value, numberOfDigitsBottom=digitsBottom.value) {
   for (let index = 0; index < numCards; index++) {
     // a card
     let card = document.createElement('div')
@@ -50,8 +64,8 @@ function buildCard(numCards=12, whichOperator=operatorType.value, topVal=digitsT
     operator.textContent = whichOperator
     top.appendChild(operator)
     top.appendChild(ul)
-    ul.appendChild(generateNumber(topVal))
-    ul.appendChild(generateNumber(bottomVal))
+    ul.appendChild(generateNumber(numberOfDigitsTop))
+    ul.appendChild(generateNumber(numberOfDigitsBottom))
     
     // bottom half
     let answer = document.createElement('div')
@@ -63,15 +77,13 @@ function buildCard(numCards=12, whichOperator=operatorType.value, topVal=digitsT
 }
 buildCard()
 
-// buildCard(number of problems (9 is default), type of operator[+, -, etc])
-
 form.addEventListener('change', e => {
     e.stopPropagation()
     document.querySelectorAll('.card').forEach(x => x.remove())
     localStorage.setItem('digitsTop', digitsTop.value)
     localStorage.setItem('digitsBottom', digitsBottom.value)
     localStorage.setItem('operator', operatorType.value)
+    localStorage.setItem('rangeTopMin', rangeTopMin.value)
+    localStorage.setItem('rangeTopMax', rangeTopMax.value)
     buildCard(undefined, undefined, digitsTop.value, digitsBottom.value) 
 })
-
-// 9 to a page
