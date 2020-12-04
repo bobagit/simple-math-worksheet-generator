@@ -12,8 +12,8 @@ const date = document.querySelector('.date')
 // local storage values
 digitsTop.value = localStorage.getItem('digitsTop') || 1
 digitsBottom.value = localStorage.getItem('digitsBottom') || 1
-operatorType.value = localStorage.getItem('operator') || '&#x2b'
-rangeTopMin.value = localStorage.getItem('rangeTopMin') || 1
+operatorType.value = localStorage.getItem('operator') || '+'
+rangeTopMin.value = localStorage.getItem('rangeTopMin') || 0
 rangeTopMax.value = localStorage.getItem('rangeTopMax') || 9
 
 // random number generator
@@ -32,7 +32,7 @@ let createNumber = (digits) => {
     if (i == 0 && isTwoDigits(digits)) {
       num = getRandomInt(1, rangeTopMax.value)
     } else {
-      num = getRandomInt(0, rangeTopMax.value)
+      num = getRandomInt(rangeTopMin.value, rangeTopMax.value)
     }
     number += num
   }
