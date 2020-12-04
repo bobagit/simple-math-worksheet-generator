@@ -7,6 +7,7 @@ const digitsBottom = document.querySelector('.digits-bottom')
 const operatorType = document.querySelector('.operator-type')
 const rangeTopMin = document.querySelector('.range-top-min')
 const rangeTopMax = document.querySelector('.range-top-max')
+const date = document.querySelector('.date')
 
 // local storage values
 digitsTop.value = localStorage.getItem('digitsTop') || 1
@@ -49,6 +50,9 @@ function generateNumber(digits) {
 
 function buildCard(numCards=12, whichOperator=operatorType.value, numberOfDigitsTop=digitsTop.value, numberOfDigitsBottom=digitsBottom.value) {
   for (let index = 0; index < numCards; index++) {
+    // date
+    let dateNow = new Date
+    date.innerText = 'Printed: ' + dateNow.toDateString()
     // a card
     let card = document.createElement('div')
     card.classList = 'card'
