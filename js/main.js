@@ -42,7 +42,7 @@ const DOM = (() => {
       number += num
     }
     //randNum.innerText = createNumber(digits, allowNegatives);
-    return num
+    return number
   };
 
   return {
