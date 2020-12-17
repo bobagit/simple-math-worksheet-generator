@@ -37,7 +37,7 @@ form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 45%;
+  width: 50%;
   min-width: 520px;
   margin: 2rem auto 5rem;
   padding: 1rem;
