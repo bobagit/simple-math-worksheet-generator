@@ -12,7 +12,6 @@ const DOM = (() => {
   const allowNegatives = document.querySelector('.allow-negatives')
   const toggleNegative = document.querySelector('.negatives-visible')
 
-
   // local storage values
   digitsTop.value = localStorage.getItem('digitsTop') || 1
   digitsBottom.value = localStorage.getItem('digitsBottom') || 1
@@ -101,7 +100,7 @@ function buildCard(numCards = 12, whichOperator = DOM.operatorType.value, number
     myArr.push(DOM.generateNumber(numberOfDigitsTop))
     myArr.push(DOM.generateNumber(numberOfDigitsBottom))
     
-    if (allowNegatives == "false") {
+    if (allowNegatives == "false" && (numberOfDigitsTop == numberOfDigitsBottom)) {
        myArr = myArr.sort().reverse()
     }
     
