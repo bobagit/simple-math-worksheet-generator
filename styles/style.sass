@@ -16,27 +16,33 @@ header
     text-align: center
     margin: 0
     padding: 0.5rem 0 1rem
-    
 form
+  padding: 1rem
+  margin: 1.5rem 0 3rem
   display: flex
   flex-direction: column
   align-items: center
   justify-content: center
-  width: 50%
-  min-width: 520px
-  margin: 2rem auto 5rem
-  padding: 1rem
   font-size: 1.2rem
-  border-radius: 7px
   background-image:  linear-gradient(to left, #ffafbd, #ffc3a0)
   select
-    font-size: 1.5rem
+    font-size: 1.2rem
   .options
     margin: 0.4rem auto
   .disclaimer
     margin-top: 1rem
     font-size: 0.9rem
-    
+  #operator, #allowNegs, #numberRange
+    display: flex
+    flex-direction: column
+    align-items: center
+    label
+      padding-bottom: 0.5rem
+  .inner-range
+    display: flex
+    flex-direction: row
+    align-items: center
+
 #card-container
   display: grid
   grid-template-columns: auto auto auto auto
@@ -65,69 +71,11 @@ form
         letter-spacing: 0.9rem
     .answer
       border-top: 4px solid black
-#customize
-  padding: 1rem 0
-  margin: 0 0 0rem
 
 footer
   position: none
   padding: 7rem 2rem 1rem
   text-align: center
-
-@media (max-width: 900px)
-  header
-    h1
-      padding-top: 1rem
-      font-size: 1.5rem
-  form
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-    width: 100%
-    min-width: 375px
-    margin: 1rem auto
-    padding: 1rem
-    font-size: 1rem
-    select
-      font-size: 1rem
-    .options
-      margin: 0.75rem auto
-      text-align: center
-    .disclaimer
-      margin-top: 1rem
-      font-size: 0.9rem
-      text-align: center
-
-  #card-container
-    display: grid
-    grid-template-columns: auto auto
-    grid-column-gap: 1rem
-    grid-row-gap: 6rem
-    margin: 0 auto
-    font-size: 2rem
-    padding: 1rem
-    .card
-      display: flex
-      flex-direction: column
-      margin: 0 auto
-      .top
-        display: flex
-        flex-direction: row
-        justify-content: space-between
-      
-      .operator
-        margin-top: auto
-      ul
-        list-style: none
-        &.numbers
-          margin: 0
-        li
-          text-align: right
-          font-family: "Menlo", "Monaco", "Courier"
-          letter-spacing: 0.9rem
-      .answer
-        border-top: 3px solid black
 
 @media print
   header

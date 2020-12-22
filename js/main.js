@@ -67,7 +67,7 @@ const DOM = (() => {
 
 function buildCard(numCards = 12, whichOperator = DOM.operatorType.value, numberOfDigitsTop = DOM.digitsTop.value, numberOfDigitsBottom = DOM.digitsBottom.value, allowNegatives = DOM.allowNegatives.value) {
   if (DOM.operatorType.value == '-') {
-    DOM.toggleNegative.style.display = 'inline'
+    DOM.toggleNegative.style.display = 'flex'
   } else {
     DOM.toggleNegative.style.display = 'none'
   }

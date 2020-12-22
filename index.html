@@ -33,7 +33,7 @@
     </select>
     </div>
     
-    <div class="options">
+    <div id="operator" class="options">
     <label for="operator-type">Operator</label>
     <select name="operator-type" class="operator-type">
       <option value="+">Add</option>
@@ -42,16 +42,17 @@
     </select>
     </div>
     
-    <div class="options negatives-visible">
-      <label for="allow-negatives">Allow Negative Numbers?</label>
+    <div id="allowNegs" class="options negatives-visible">
+      <label for="allow-negatives">Allow Negative Answers?</label>
       <select name="allow-negatives" class="allow-negatives">
         <option value="false">No</option>
         <option value="true">Yes</option>
       </select>
     </div>
 
-    <div class="options">
+    <div id="numberRange" class="options">
       <label for="rangeTop">Only numbers between </label>
+      <div class="inner-range">
       <select name="range-top-min" class="range-top-min">
         <option value="0">0</option>
         <option value="1">1</option>
@@ -77,6 +78,7 @@
         <option value="8">8</option>
         <option value="9">9</option>
       </select>
+      </div>
     </div>
 
     <p class="disclaimer">Reload page for new set. This box <strong>will not</strong> appear on printed sheet.</p>
