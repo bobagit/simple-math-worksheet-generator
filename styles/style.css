@@ -5,7 +5,7 @@ body {
 }
 
 header {
-  margin: 0 0 2rem;
+  margin: 0 0 0rem;
   padding: 0;
 }
 
@@ -117,6 +117,11 @@ form .disclaimer {
   border-top: 4px solid black;
 }
 
+#customize {
+  padding: 1rem 0;
+  margin: 0 0 0rem;
+}
+
 footer {
   position: none;
   padding: 7rem 2rem 1rem;
@@ -142,17 +147,18 @@ footer {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    width: 70%;
-    min-width: 300px;
+    width: 100%;
+    min-width: 375px;
     margin: 1rem auto;
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   form select {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   form .options {
-    margin: 1rem auto;
+    margin: 0.75rem auto;
+    text-align: center;
   }
   form .disclaimer {
     margin-top: 1rem;
