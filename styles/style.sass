@@ -77,6 +77,37 @@ footer
   padding: 7rem 2rem 1rem
   text-align: center
 
+@media (max-width: 600px)
+  #card-container
+    display: grid
+    grid-template-columns: auto auto
+    grid-column-gap: 1rem
+    grid-row-gap: 6rem
+    margin: 0 auto
+    font-size: 2rem
+    padding: 1rem
+    .card
+      display: flex
+      flex-direction: column
+      margin: 0 auto
+      .top
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+      
+      .operator
+        margin-top: auto
+      ul
+        list-style: none
+        &.numbers
+          margin: 0
+        li
+          text-align: right
+          font-family: "Menlo", "Monaco", "Courier"
+          letter-spacing: 0.9rem
+      .answer
+        border-top: 3px solid black
+
 @media print
   header
     margin-bottom: 4rem
